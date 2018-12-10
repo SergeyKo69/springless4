@@ -44,6 +44,7 @@ public class MainTest {
 
         Ad adTemp = adService.findById(ad.getId());
         Assert.assertEquals(ad.getTitle(),adTemp.getTitle());
+        Assert.assertTrue(adService.findAllByCategory(category).size() > 0);
 
         adService.delete(ad);
         categoryService.delete(category);
