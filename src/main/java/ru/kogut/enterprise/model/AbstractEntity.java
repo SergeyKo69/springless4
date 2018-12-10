@@ -1,5 +1,7 @@
 package ru.kogut.enterprise.model;
 
+import org.intellij.lang.annotations.Identifier;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -9,6 +11,7 @@ import java.util.UUID;
 public class AbstractEntity {
 
     @Id
+    @Identifier
     @Column(name = "id")
     private String id = UUID.randomUUID().toString();
 

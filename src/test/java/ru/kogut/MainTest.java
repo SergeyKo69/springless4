@@ -25,10 +25,10 @@ public class MainTest {
         company.setName("ООО Рога и копыта");
         company.setDescription("Хорошая компания");
         company.setAddress("г. Москва");
-        companyService.save(company);
+        companyService.saveOrUpdate(company);
         Category category = new Category();
         category.setName("New category");
-        categoryService.save(category);
+        categoryService.saveOrUpdate(category);
         Ad ad = new Ad();
         ad.setBody("body ad");
         ad.setCategory(category);
@@ -36,14 +36,13 @@ public class MainTest {
         ad.setPhone("+79007777777");
         ad.setTitle("title ad");
 
-        adService.save(ad);
+        adService.saveOrUpdate(ad);
         Assert.assertNotNull(adService.findById(ad.getId()));
 
         ad.setTitle("title ad2");
-        adService.update(ad);
+        adService.saveOrUpdate(ad);
 
         Ad adTemp = adService.findById(ad.getId());
-        Assert.assertNotNull(adTemp);
         Assert.assertEquals(ad.getTitle(),adTemp.getTitle());
 
         adService.delete(ad);

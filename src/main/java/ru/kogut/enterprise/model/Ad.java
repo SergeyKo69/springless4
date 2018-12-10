@@ -63,4 +63,16 @@ public class Ad  extends AbstractEntity{
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return "Ad{" +
+                "id=" + getId() +
+                ", company=" + company +
+                ", category=" + category +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
